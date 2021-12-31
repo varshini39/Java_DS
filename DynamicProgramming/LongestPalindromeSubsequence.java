@@ -34,7 +34,7 @@ public class LongestPalindromeSubsequence {
             return s;
         } else {
             String s1 = longestPalindrome(s.substring(1));
-            String s2 = longestPalindrome(s.substring(0, s.length()));
+            String s2 = longestPalindrome(s.substring(0, s.length()-1));
             if(s1.length() > s2.length()) {
                 return s1;
             }
