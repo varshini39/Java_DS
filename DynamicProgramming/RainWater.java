@@ -44,8 +44,28 @@ public class RainWater {
                 rightPointer--;
             }
         }
-
         return totalWater;
+    }
+
+    public int maxArea(int[] height) {
+        /*
+         * Input: height = [1,8,6,2,5,4,8,3,7]
+         * Output: 49 [8,6,2,5,4,8,3,7]
+         */
+        int lp = 0;
+        int rp = height.length - 1;
+        int total = 0;
+
+        while (lp < rp) {
+            int area = Math.min(height[lp], height[rp]) * (rp - lp);
+            total = Math.max(total, area);
+            if (height[lp] < height[rp]) {
+                lp++;
+            } else {
+                rp--;
+            }
+        }
+        return total;
     }
 
     public static void main(String[] args) {
